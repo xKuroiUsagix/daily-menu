@@ -26,6 +26,20 @@ versions. The mobile app always sends the build version in headers
 - Will be a + to add flake8 or smth similar
 
 ## Project Setup
+### Configuration
+1. In root directory create file `.env.dev`. 
+
+2. Create next key-value pairs:
+    - SECRET_KEY=*your django secret key* (Could be any random string. You can use `get_random_secret_key` function from `django.core.management.utils`)
+    - DEBUG=1
+    - SQL_ENGINE=django.db.backends.postgresql
+    - SQL_DATABASE=*db_name*
+    - SQL_USER=*db_user*
+    - SQL_PASSWORD=*db_password*
+    - SQL_HOST=db
+    - SQL_PORT=5432
+
+### Docker
 1. Windows:
     - Install [Docker Desktop](https://www.docker.com/products/docker-desktop/) 
     - Open downloaded program
