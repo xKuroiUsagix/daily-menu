@@ -5,7 +5,7 @@ from rest_framework.views import Response
 from rest_framework import status
 from rest_framework.decorators import action
 
-from .permissions import IsAdminOrReadOnly
+from authentication.permissions import IsAdminOrReadOnly
 from .serializers import (
     RestaurantSerializer,
     DishSerializer,
