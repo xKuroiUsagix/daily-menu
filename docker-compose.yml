@@ -1,0 +1,21 @@
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./daily_menu/:/usr/src/daily_menu/
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env.dev
+  db:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=daily_menu
+      - POSTGRES_PASSWORD=daily_menu
+      - POSTGRES_DB=daily_menu_dev
+
+volumes:
+  postgres_data:
